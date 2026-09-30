@@ -58,12 +58,6 @@ combo_list = $(subst -, ,$(the_library_combo))
 # FOUNDATION_LIB and the GUI_LIB variable manually overriding our
 # determination.
 
-# gc=yes is just another way of saying you want OBJC_RUNTIME_LIB = gnugc
-# to be used!
-ifeq ($(gc), yes)
-  OBJC_RUNTIME_LIB = gnugc
-endif
-
 ifeq ($(OBJC_RUNTIME_LIB),)
   OBJC_RUNTIME_LIB = $(word 1,$(combo_list))
 endif
